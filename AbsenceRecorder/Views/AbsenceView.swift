@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct AbsenceView: View {
+    let division: Division
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("Absence View - \(division.code)")
     }
 }
 
 #Preview {
-    AbsenceView()
+    AbsenceView(division: Division.examples[0])
 }

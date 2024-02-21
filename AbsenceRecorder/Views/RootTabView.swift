@@ -9,10 +9,23 @@ import SwiftUI
 
 struct RootTabView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView {
+            DivisionsView()
+                .tabItem {
+                    Image(systemName: "square.and.pencil")
+                    Text("Absences")
+                }
+            StatisticsView()
+                .tabItem {
+                    Image(systemName: "chart.line.uptrend.xyaxis")
+                    Text("Statistics")
+                }
+        }
     }
 }
 
 #Preview {
     RootTabView()
+        .environmentObject(StateController())
+
 }

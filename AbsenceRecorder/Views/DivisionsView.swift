@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct DivisionsView: View {
+    @EnvironmentObject var state: StateController
     @State private var currentDate: Date = Date()
     var body: some View {
         NavigationView{
@@ -30,5 +31,7 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    DivisionsView()
+        .environmentObject(StateController())
+
 }
