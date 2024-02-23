@@ -11,7 +11,25 @@ struct AbsenceView: View {
     let division: Division
     
     var body: some View {
-        Text("Absence View - \(division.code)")
+        NavigationStack{
+            VStack{
+                Color.blue
+            }
+                .navigationTitle("Absences: \(division.code)")
+                .toolbar{
+                    ToolbarItem(placement: .bottomBar) {
+                        HStack{
+                            Button(action: {}){
+                                HStack{
+                                    Image(systemName: "minus.circle")
+                                    Text("Delete division")
+                                }
+                                .foregroundStyle(.red)
+                            }
+                        }
+                    }
+                }
+        }
     }
 }
 

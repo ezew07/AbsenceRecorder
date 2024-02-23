@@ -22,6 +22,7 @@
 		F05ABB132B835C0B004F2AC3 /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05ABB122B835C0B004F2AC3 /* RootTabView.swift */; };
 		F05ABB152B835DB3004F2AC3 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05ABB142B835DB3004F2AC3 /* StatisticsView.swift */; };
 		F05ABB172B836045004F2AC3 /* StateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05ABB162B836045004F2AC3 /* StateController.swift */; };
+		F0D64C472B87EC6900825482 /* CreateDivisionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D64C462B87EC6900825482 /* CreateDivisionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		F05ABB122B835C0B004F2AC3 /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
 		F05ABB142B835DB3004F2AC3 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		F05ABB162B836045004F2AC3 /* StateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateController.swift; sourceTree = "<group>"; };
+		F0D64C462B87EC6900825482 /* CreateDivisionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDivisionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 				F05ABB0E2B815301004F2AC3 /* AbsenceView.swift */,
 				F05ABB122B835C0B004F2AC3 /* RootTabView.swift */,
 				F05ABB142B835DB3004F2AC3 /* StatisticsView.swift */,
+				F0D64C462B87EC6900825482 /* CreateDivisionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0D64C472B87EC6900825482 /* CreateDivisionView.swift in Sources */,
 				F05ABB0D2B814F66004F2AC3 /* DivisionItemView.swift in Sources */,
 				F05ABADB2B813067004F2AC3 /* DivisionsView.swift in Sources */,
 				F05ABB132B835C0B004F2AC3 /* RootTabView.swift in Sources */,

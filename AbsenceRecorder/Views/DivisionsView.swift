@@ -10,22 +10,34 @@ import SwiftUI
 struct DivisionsView: View {
     @EnvironmentObject var state: StateController
     @State private var currentDate: Date = Date()
+    @State private var toggleCreateDivision = false
+
     var body: some View {
         NavigationView{
+
             DivisionItemView(divisions: Division.examples)
                 .navigationTitle("\(currentDate.getShortDate())")
                 .toolbar {
-                ToolbarItem(placement: .topBarLeading){
-                    Button(action:{currentDate = currentDate.decrementDateByOne()}) {
+                    ToolbarItem(placement: .topBarLeading){
+                        Button(action:{currentDate = currentDate.decrementDateByOne()}) {
                             Image(systemName: "arrow.backward")
                         }
-                }
-                ToolbarItem(placement: .topBarTrailing){
-                    Button(action:{currentDate = currentDate.incrementDateByOne()}) {
-                        Image(systemName: "arrow.forward")
+                    }
+                    ToolbarItem(placement: .topBarTrailing){
+                        Button(action:{currentDate = currentDate.incrementDateByOne()}) {
+                            Image(systemName: "arrow.forward")
+                        }
+                    }
+                    ToolbarItem(placement: .principal){
+                        Button(action:{toggleCreateDivision.toggle()}) {
+                            Image(systemName: "plus.square.fill.on.square.fill")
+                        }
                     }
                 }
-            }
+                .sheet(isPresented: $toggleCreateDivision, content: {
+                    CreateDivisionView(isPresented: $toggleCreateDivision)
+                })
+
         }
     }
 }

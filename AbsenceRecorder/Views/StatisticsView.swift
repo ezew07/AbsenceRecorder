@@ -18,8 +18,8 @@ struct StatisticsView: View {
                     }
                 }
             }
+            .navigationTitle("Statistics")
         }
-        .navigationTitle("Statistics")
     }
 }
 
