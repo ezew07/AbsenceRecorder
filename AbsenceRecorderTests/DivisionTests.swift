@@ -6,30 +6,46 @@
 //
 
 import XCTest
+@testable import AbsenceRecorder
+
 
 final class DivisionTests: XCTestCase {
+    func testGetAbsenceForDivisionWithAbsenceOnThatDayReturnsAnAbsence() throws{
+        // arrange
+        let division = Division(code: "TestDiv")
+        let dateToday = Date()
+        let dateLaterToday = Date(timeIntervalSinceNow: 100)
+        let dateTomorrow = Date(timeIntervalSinceNow: 5467652043564)
+        let absence1 = Absence(takeOn: dateTomorrow, students: Student.examples)
+        let absence2 = Absence(takeOn: dateToday, students: Student.examples)
+        division.absences.append(absence1)
+        division.absences.append(absence2)
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+        //act
+        let actual = division.getAbsence(for: dateLaterToday)
+        //assert
+        XCTAssertNotNil(actual)
+        if let actualNotNil = actual{
+            XCTAssertEqual(actualNotNil.takeOn, absence2.takeOn)
         }
     }
+    
+    func createAbsenceOrGetExistingIfAvailable(for date: Date) throws {
+        // arange
+        let division = Division(code: "TestDiv")
+        let dateToday = Date()
+        let dateTomorrow = Date(timeIntervalSinceNow: 5467652043564)
+        //act
+        let actual = division.getAbsence(for: dateToday)
+        if actual != nil{
+            let unwrappedActual = actual
+        }
+        else{
+
+        }
+        
+        //assert
+    }
+    
 
 }

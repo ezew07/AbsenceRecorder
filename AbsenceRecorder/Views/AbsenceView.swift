@@ -8,31 +8,17 @@
 import SwiftUI
 
 struct AbsenceView: View {
-    let division: Division
+    let absence: Absence
     
     var body: some View {
         NavigationStack{
-            VStack{
-                Color.blue
+            List(absence.studentAbsences, id: \.self.student.firstname){ studentAbsence in
+                AbsenceItemView(studentAbsence: studentAbsence)
             }
-                .navigationTitle("Absences: \(division.code)")
-                .toolbar{
-                    ToolbarItem(placement: .bottomBar) {
-                        HStack{
-                            Button(action: {}){
-                                HStack{
-                                    Image(systemName: "minus.circle")
-                                    Text("Delete division")
-                                }
-                                .foregroundStyle(.red)
-                            }
-                        }
-                    }
-                }
+            .navigationTitle("Absences")
         }
     }
 }
-
 #Preview {
-    AbsenceView(division: Division.examples[0])
+    AbsenceView(absence: Absence.example)
 }

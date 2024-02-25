@@ -17,4 +17,11 @@ class Student {
         self.surname = surname
         self.birthday = birthday
     }
+    
+    #if DEBUG
+    static let examples = [
+        Student(firstname: "Andreas", surname: "Kwong", birthday: DateComponents(calendar: .current, year: 2007, month: 8, day: 19).date!)
+    ]
+    
+    #endif
 }

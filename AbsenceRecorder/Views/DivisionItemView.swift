@@ -9,22 +9,17 @@ import SwiftUI
 
 struct DivisionItemView: View {
     @EnvironmentObject var state: StateController
-    let divisions: [Division]
+    let division: Division
+
     var body: some View {
-        List(){
-            ForEach(state.divisions, id: \.code) { division in
-                NavigationLink(destination: AbsenceView(division: division)){
-                    HStack(){
-                        Image(systemName: "\(division.students.count).circle")
-                        Text("\(division.code)")
-                    }
-                }
-            }
+        HStack(){
+            Image(systemName: "\(division.students.count).circle")
+            Text("\(division.code)")
         }
     }
 }
 
 #Preview {
-    DivisionItemView(divisions: Division.examples)
+    DivisionItemView(division: Division.examples[0])
         .environmentObject(StateController())
 }

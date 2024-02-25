@@ -14,11 +14,13 @@ struct DivisionsView: View {
 
     var body: some View {
         NavigationView{
-
-            DivisionItemView(divisions: Division.examples)
+            List(state.divisions, id: \.self.code){ division in
+                NavigationLink(destination: AbsenceView(absence: division.createAbsenceOrGetExistingIfAvailable(for: currentDate))){
+                    DivisionItemView(division: division)
+                }
+            }
                 .navigationTitle("\(currentDate.getShortDate())")
-                .toolbar {
-                    ToolbarItem(placement: .topBarLeading){
+                .toolbar {                    ToolbarItem(placement: .topBarLeading){
                         Button(action:{currentDate = currentDate.decrementDateByOne()}) {
                             Image(systemName: "arrow.backward")
                         }
