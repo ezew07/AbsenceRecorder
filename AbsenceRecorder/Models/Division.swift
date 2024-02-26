@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Division{
+class Division: Codable{
     let code: String
     var students: [Student] = []
     var absences: [Absence] = []
@@ -18,7 +18,7 @@ class Division{
     
     func getAbsence(for date: Date) -> Absence? {
         return absences.first{
-            let comparison = Calendar.current.compare($0.takeOn, to: date, toGranularity: .day)
+            let comparison = Calendar.current.compare($0.takenOn, to: date, toGranularity: .day)
             return comparison == .orderedSame
         }
     }
@@ -28,7 +28,7 @@ class Division{
             return exisitingAbsence
         }
         else{
-            let newAbsence = Absence(takeOn: date, students: students)
+            let newAbsence = Absence(takenOn: date, students: students)
             absences.append(newAbsence)
             return newAbsence
         }

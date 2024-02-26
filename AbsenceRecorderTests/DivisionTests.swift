@@ -26,7 +26,7 @@ final class DivisionTests: XCTestCase {
         //assert
         XCTAssertNotNil(actual)
         if let actualNotNil = actual{
-            XCTAssertEqual(actualNotNil.takeOn, absence2.takeOn)
+            XCTAssertEqual(actualNotNil.takenOn, absence2.takenOn)
         }
     }
     

@@ -7,19 +7,19 @@
 
 import Foundation
 
-class Absence {
-    let takeOn: Date
+class Absence: Codable {
+    let takenOn: Date
     let studentAbsences: [StudentAbsence]
     
-    init(takeOn: Date, students: [Student]) {
-        self.takeOn = takeOn
+    init(takenOn: Date, students: [Student]) {
+        self.takenOn = takenOn
         self.studentAbsences = students.map {
             StudentAbsence(student: $0)
         }
     }
     
     #if DEBUG
-    static let example = Absence(takeOn: Date(), students: Student.examples)
+    static let example = Absence(takenOn: Date(), students: Student.examples)
     #endif
     
     

@@ -19,6 +19,7 @@ struct DivisionsView: View {
                     DivisionItemView(division: division)
                 }
             }
+            .onAppear(perform: { state.saveToFile() })
                 .navigationTitle("\(currentDate.getShortDate())")
                 .toolbar {                    ToolbarItem(placement: .topBarLeading){
                         Button(action:{currentDate = currentDate.decrementDateByOne()}) {

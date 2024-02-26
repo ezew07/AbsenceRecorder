@@ -12,6 +12,24 @@ class StateController: ObservableObject {
     
     init() {
         divisions = Division.examples
+        loadFromFile()
     }
+    
+    func getFilePath(filename: String) -> URL{
+        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(filename)
+    }
+    
+    
+    func loadFromFile() {
+        if let loaded: [Division] = FileManager.default.load(filename: "divisions.json"){
+            divisions = loaded
+        }
+    }
+    
+    func saveToFile() {
+        FileManager.default.save(filename: "divisions.json", object: divisions)
+        
+    }
+    
 }
 

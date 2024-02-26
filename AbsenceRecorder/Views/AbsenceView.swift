@@ -16,6 +16,7 @@ struct AbsenceView: View {
                 AbsenceItemView(studentAbsence: studentAbsence)
             }
             .navigationTitle("Absences")
+            .padding(.top, 0)
         }
     }
 }
