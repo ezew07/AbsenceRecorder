@@ -13,7 +13,9 @@ struct CreateStudentView: View {
     @State private var newStudentFirstname = ""
     @State private var newStudentLastname = ""
     @State private var newStudentBirthday = Date()
+    
     @Binding var currentDivision: Division
+    
     var body: some View {
         NavigationStack{
             Form{
