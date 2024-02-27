@@ -13,8 +13,7 @@ struct CreateStudentView: View {
     @State private var newStudentFirstname = ""
     @State private var newStudentLastname = ""
     @State private var newStudentBirthday = Date()
-    
-    @Binding var currentDivision: Division
+    @State var currentDivision: Division
     
     var body: some View {
         NavigationStack{
@@ -29,7 +28,7 @@ struct CreateStudentView: View {
             .toolbar{
                 ToolbarItem(placement: .topBarTrailing) {
                     Button(action: {
-                        currentDivision.students.append(Student(firstname: newStudentFirstname, surname: newStudentLastname, birthday: newStudentBirthday))
+                        state.divisions[state.returnDivisionIndexInStateController(target: currentDivision) ?? 0].students.append(Student(firstname: newStudentFirstname, surname: newStudentLastname, birthday: newStudentBirthday))
                         isPresented = false
                         
                     }){
@@ -43,6 +42,6 @@ struct CreateStudentView: View {
 }
 
 #Preview {
-    CreateStudentView(isPresented: .constant(true), currentDivision: .constant(Division.examples[0]))
+    CreateStudentView(isPresented: .constant(true), currentDivision: Division.examples[0])
         .environmentObject(StateController())
 }

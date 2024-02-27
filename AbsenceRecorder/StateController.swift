@@ -15,6 +15,15 @@ class StateController: ObservableObject {
         loadFromFile()
     }
     
+    func returnDivisionIndexInStateController(target: Division) -> Int?{
+        for i in 0..<divisions.count{
+            if divisions[i].code == target.code{
+                return i
+            }
+        }
+        return nil
+    }
+    
     func getFilePath(filename: String) -> URL{
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(filename)
     }

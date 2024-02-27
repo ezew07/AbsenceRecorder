@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+//division.createAbsenceOrGetExistingIfAvailable(for: currentDate), currentDivision: $currentDivision
+
 struct DivisionsView: View {
     @EnvironmentObject var state: StateController
     @State private var currentDate: Date = Date()
@@ -15,8 +17,7 @@ struct DivisionsView: View {
     var body: some View {
         NavigationStack{
             List(state.divisions, id: \.self.code){ division in
-                @State var currentDivision = division
-                NavigationLink(destination: (AbsenceView(absence: division.createAbsenceOrGetExistingIfAvailable(for: currentDate), currentDivision: $currentDivision))){
+                NavigationLink(destination: AbsenceView(absence: division.createAbsenceOrGetExistingIfAvailable(for: currentDate), currentDivision: division)){
                     DivisionItemView(division: division)
                 }
             }
