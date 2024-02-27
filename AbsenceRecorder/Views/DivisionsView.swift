@@ -13,16 +13,18 @@ struct DivisionsView: View {
     @State private var toggleCreateDivision = false
 
     var body: some View {
-        NavigationView{
+        Section{
             List(state.divisions, id: \.self.code){ division in
                 @State var currentDivision = division
                 NavigationLink(destination: (AbsenceView(absence: division.createAbsenceOrGetExistingIfAvailable(for: currentDate), currentDivision: $currentDivision))){
                     DivisionItemView(division: division)
                 }
             }
+        }
+            .navigationTitle("\(currentDate.getShortDate())")
             .onAppear(perform: { state.saveToFile() })
-                .navigationTitle("\(currentDate.getShortDate())")
-                .toolbar {                    ToolbarItem(placement: .topBarLeading){
+                .toolbar {
+                    ToolbarItem(placement: .topBarLeading){
                         Button(action:{currentDate = currentDate.decrementDateByOne()}) {
                             Image(systemName: "arrow.backward")
                         }
@@ -42,7 +44,6 @@ struct DivisionsView: View {
                     CreateDivisionView(isPresented: $toggleCreateDivision)
                 })
 
-        }
     }
 }
 
