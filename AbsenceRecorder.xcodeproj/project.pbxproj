@@ -27,6 +27,7 @@
 		F0CCAE9A2B8AB60900390AF0 /* Absence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CCAE992B8AB60900390AF0 /* Absence.swift */; };
 		F0CCAE9E2B8ABC5100390AF0 /* DivisionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CCAE9B2B8ABB7900390AF0 /* DivisionTests.swift */; };
 		F0CCAEA02B8D4F0C00390AF0 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CCAE9F2B8D4F0C00390AF0 /* FileManager.swift */; };
+		F0CCAEA22B8D599C00390AF0 /* CreateStudentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CCAEA12B8D599C00390AF0 /* CreateStudentView.swift */; };
 		F0D64C472B87EC6900825482 /* CreateDivisionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D64C462B87EC6900825482 /* CreateDivisionView.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		F0CCAE992B8AB60900390AF0 /* Absence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Absence.swift; sourceTree = "<group>"; };
 		F0CCAE9B2B8ABB7900390AF0 /* DivisionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivisionTests.swift; sourceTree = "<group>"; };
 		F0CCAE9F2B8D4F0C00390AF0 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
+		F0CCAEA12B8D599C00390AF0 /* CreateStudentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStudentView.swift; sourceTree = "<group>"; };
 		F0D64C462B87EC6900825482 /* CreateDivisionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDivisionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -180,6 +182,7 @@
 				F0CCAE952B8AAAD200390AF0 /* AbsenceItemView.swift */,
 				F05ABB142B835DB3004F2AC3 /* StatisticsView.swift */,
 				F0D64C462B87EC6900825482 /* CreateDivisionView.swift */,
+				F0CCAEA12B8D599C00390AF0 /* CreateStudentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				F05ABB132B835C0B004F2AC3 /* RootTabView.swift in Sources */,
 				F05ABB0B2B8144F5004F2AC3 /* Date.swift in Sources */,
 				F05ABB152B835DB3004F2AC3 /* StatisticsView.swift in Sources */,
+				F0CCAEA22B8D599C00390AF0 /* CreateStudentView.swift in Sources */,
 				F05ABB062B813295004F2AC3 /* Student.swift in Sources */,
 				F0CCAE962B8AAAD200390AF0 /* AbsenceItemView.swift in Sources */,
 				F0CCAE9A2B8AB60900390AF0 /* Absence.swift in Sources */,

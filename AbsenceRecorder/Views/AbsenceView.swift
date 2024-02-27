@@ -9,14 +9,24 @@ import SwiftUI
 
 struct AbsenceView: View {
     let absence: Absence
-    
+    @State private var toggleCreateStudent = false
+
     var body: some View {
         NavigationStack{
             List(absence.studentAbsences, id: \.self.student.firstname){ studentAbsence in
                 AbsenceItemView(studentAbsence: studentAbsence)
             }
             .navigationTitle("Absences")
-            .padding(.top, 0)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Button(action: {toggleCreateStudent.toggle()}){
+                        Image(systemName: "plus.square.fill.on.square.fill")
+                    }
+                }
+            }
+            .sheet(isPresented: $toggleCreateStudent, content: {
+                CreateStudentView()
+            })
         }
     }
 }
