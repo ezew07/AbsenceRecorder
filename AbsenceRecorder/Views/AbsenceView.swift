@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AbsenceView: View {
     let absence: Absence
+    @Binding var currentDivision: Division
     @State private var toggleCreateStudent = false
 
     var body: some View {
@@ -25,11 +26,11 @@ struct AbsenceView: View {
                 }
             }
             .sheet(isPresented: $toggleCreateStudent, content: {
-                CreateStudentView()
+                CreateStudentView(isPresented: $toggleCreateStudent, currentDivision: $currentDivision)
             })
         }
     }
 }
 #Preview {
-    AbsenceView(absence: Absence.example)
+    AbsenceView(absence: Absence.example, currentDivision: .constant(Division.examples[0]))
 }
